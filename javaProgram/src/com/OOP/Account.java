@@ -1,45 +1,53 @@
 package com.OOP;
 
-public class Account extends Bank {
+public class Account {
 	private int accountNumber;
 	private double balance;
 	private Customer customer;
 	
-	public account(Customer customer, int accountNumber, double balance) {
+	public Account(Customer customer, int accountNumber, double balance) {
 		this.customer = customer;
 		this.accountNumber = accountNumber;
 		this.balance = balance;
 	}
 	
-	int getAccountNumber() {
+	public int getAccountNumber() {
 		return accountNumber;
 	}
 	
-	void setAccountNumber(int accountNumber) {
+	public void setAccountNumber(int accountNumber) {
 		this.accountNumber = accountNumber;
 	}
 	
-	double getBalance() {
+	public double getBalance() {
 		return balance;
 	}
 	
-	void setBalance(double balance) {
+	public void setBalance(double balance) {
 		this.balance = balance;
 	}
 	
-	Customer getCustomer() {
+	public Customer getCustomer() {
 		return customer;
 	}
 	
-	void setCustomer(Customer customer) {
+	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
 	
-	void deposit(double amount) {
-		balance += amount;
+	public void deposit(double amount) {
+		if (amount > 500) {
+			balance += amount;
+		} else {
+			System.out.println("Deposit amount must be at least 500...");
+		}
 	}
 	
-	void withdraw(double amount) {
-		balance -= amount;
+	public void withdraw(double amount) {
+		if (amount < balance) {
+			balance -= amount;
+		} else {
+			System.out.println("Insufficient balance");
+		}
 	}
 }

@@ -1,6 +1,8 @@
 package com.OOP;
 
-public class Bank {
+import java.util.ArrayList;
+
+public class Bank{
 	private String name;
 	private int code;
 	private ArrayList<Account> accounts;
@@ -9,52 +11,53 @@ public class Bank {
 	public Bank(String name, int code) {
 		this.name = name;
 		this.code = code;
+		this.accounts = new ArrayList<>();
+		this.loans = new ArrayList<>();
 	}
 	
-	String getName() {
+	public String getName() {
 		return name;
 	}
 	
-	void setName(String name) {
+	public void setName(String name) {
 		this.name = name;
 	}
-	
-	int getCode() {
+	public int getCode() {
 		return code;
 	}
 	
-	void setCode(int code) {
+	public void setCode(int code) {
 		this.code = code;
 	}
 	
-	ArrayList<Account> getAccounts(){
+	public ArrayList<Account> getAccounts(){
 		return accounts;
 	}
 	
-	void setAccounts(ArrayList<Account> accounts) {
+	public void setAccounts(ArrayList<Account> accounts) {
 		this.accounts = accounts;
 	}
 	
-	ArrayList<Loans> getLoans(){
+	public ArrayList<Loan> getLoans(){
 		return loans;
 	}
 	
-	void setLoans(ArrayList<Loan> loans) {
+	public void setLoans(ArrayList<Loan> loans) {
 		this.loans = loans;
 	}
 	
-	void addAccount(Account account) {
-		
+	public void addAccount(Account account) {
+		accounts.add(account);
 	}
-	void removeAccount(Account account) {
-		
-	}
-	
-	void addLoan(Loan loan) {
-		
+	public void removeAccount(Account account) {
+		accounts.remove(account);
 	}
 	
-	void removeLoan(Loan loan) {
-		
+	public void addLoan(Loan loan) {
+		loans.add(loan);
+	}
+	
+	public void removeLoan(Loan loan) {
+		loans.remove(loan);
 	}
 }
