@@ -17,8 +17,9 @@ public class CheckingAccount extends Account{
 	}
 	
 	public void withdraw(double amount) {
-		if (getBalance() > 500) {
-			
+		if (amount <= getBalance() + overdraftLimit) {
+			setBalance(getBalance() - amount);
+			System.out.println("Withdrawal Successfully");
 		} else {
 			System.out.println("Insufficient balance...");
 		}
