@@ -1,8 +1,8 @@
 package com.OOP;
 
-// The Account class represents a bank account, encapsulating details such as account number, balance, and the associated customer.
+// The Account class represents a bank account, encapsulating details such as account number, balance, and the associated customer
 public class Account {
-	// Private fields to store the account number, balance, and the associated customer.
+	// Private fields to store the account number, balance, and the associated customer
 	private int accountNumber; // Account number
 	private double balance; // Current balance in the account
 	private Customer customer; // Owner of the account
